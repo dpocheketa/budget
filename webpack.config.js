@@ -12,9 +12,13 @@ module.exports = {
     module: {
 		loaders: [
 			{
+				test: /\.html$/,
+				loader: 'raw'
+			},
+			{
 				test: /\.js$/,
-			    // loader: 'ng-annotate!babel!jshint',
-			    loader: 'babel!jshint',
+			    loader: 'ng-annotate!babel!jshint',
+			    // loader: 'babel!jshint',
 			    query: "",
 			    exclude: /node_modules|bower_components/
 			}

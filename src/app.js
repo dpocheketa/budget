@@ -1,10 +1,17 @@
 'use strict';
 
-function printMessage (status = 'working') {
+//vendor
+import angular from 'angular';
+import uiRouter from 'ui-router';
 
-  let message = 'ES6';
+// configs
+import runConfig from './config/runConfig.js';
+import routeConfig from './config/routeConfig.js';
 
-  console.log(`${message} is ${status}`);
+//modules
 
-}
-printMessage('working');
+angular.module('app', [
+	'ui.router'
+])
+.config(routeConfig)
+.run(runConfig);

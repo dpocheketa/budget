@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.use('/', (req, res) => {
   res.render('index.html');
 });
 
