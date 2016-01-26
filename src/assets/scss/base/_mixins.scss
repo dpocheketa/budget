@@ -1,0 +1,43 @@
+// @include:
+
+// absolute-position block
+@mixin ab($w,$h) {
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: $w;
+	height: $h;
+}
+
+// border-radius
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+		-ms-border-radius: $radius;
+		 -o-border-radius: $radius;
+			border-radius: $radius;
+}
+
+// font face
+@mixin font_face($font-name, $file-name) {
+	@font-face {
+		font-family: quote($font-name);
+		src: url('assets/fonts/' + $file-name + '.eot');
+		src: url('assets/fonts/' + $file-name + '.eot?#iefix')  format('embedded-opentype'),
+					 url('assets/fonts/' + $file-name + '.woff') format('woff'),
+					 url('assets/fonts/' + $file-name + '.ttf')  format('truetype'),
+					 url('assets/fonts/' + $file-name + '.svg##{$font-name}')  format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
+// input placeholder
+@mixin placeholder($color, $font){
+	&::-webkit-input-placeholder { color:$color; font-family:$font;}
+	&::-moz-placeholder { color:$color; font-family:$font;}
+	&:-ms-input-placeholder { color:$color; font-family:$font;}
+	&:-moz-placeholder { color:$color; font-family:$font;}
+}

@@ -12,12 +12,14 @@ module.exports = {
     module: {
 		loaders: [
 			{
-				test: /\.html$/,
-				loader: 'raw'
+			    test: /\.html$/,
+			    // loader: "raw",
+			    loader: "angular-templatecache-loader",
+			    exclude: /node_modules|bower_components/
 			},
 			{
 				test: /\.js$/,
-			    loader: 'ng-annotate!babel!jshint',
+			    loader: 'ng-annotate!babel?cacheDirectory!jshint',
 			    // loader: 'babel!jshint',
 			    query: "",
 			    exclude: /node_modules|bower_components/

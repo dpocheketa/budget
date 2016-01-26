@@ -1,0 +1,16 @@
+.plus-minus-buttons {
+	a {
+		padding: 10px 40px 2px;
+		font-size: 200%;
+		font-weight: 100;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.plus-minus-buttons {
+		a {
+			padding: 10px 40px 2px;
+			font-size: 160%;
+		}
+	}
+}

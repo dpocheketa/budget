@@ -1,0 +1,5 @@
+//	Functions
+
+@function basecolor($opacity){
+	@return rgba(39,21,15,$opacity);
+}

@@ -1,0 +1,21 @@
+.table-responsive {
+	margin-top: 8px;
+}
+
+table,
+.table {
+	margin: $quad 0;
+	&>tbody>tr>td {
+		vertical-align: middle;
+	}
+	.amount {
+		text-align: right;
+		font-weight: 900;
+	}
+	.success .amount {
+		color: $successColor;
+	}
+	.danger .amount {
+		color: $dangerColor;
+	}
+}

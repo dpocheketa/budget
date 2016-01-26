@@ -1,0 +1,82 @@
+@media screen and (min-width: 768px) {
+	.header,
+	.item,
+	.footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.header {
+		margin-bottom: 30px;
+	}
+	.dashboard {
+		border-bottom: 0;
+	}
+	.navbar-right {
+		margin-right: 0; //fix bootstrap's -15px
+	}
+	// Popup-move-money
+	.from-to-arrow {
+		.glyphicon {
+			margin-top: 34px;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	// Popup-move-money
+	.from-to-arrow {
+		.glyphicon {
+			margin-top: 5px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+	.sm-margin-top {
+		margin-top: 8px;
+	}
+	table {
+		.visible-xs-block {
+			display: table-cell !important;
+		}
+	}
+	.btn-lg, .btn-group-lg > .btn {
+		padding: 8px 16px;
+		font-size: 16px;
+		border-radius: 6px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body {
+		font-size: 15px;
+	}
+	.nav li a {
+		font-size: 15px;
+	}
+	.btn-lg, .btn-group-lg > .btn {
+		padding: 8px 14px;
+		font-size: 15px;
+		border-radius: 5px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	body {
+		font-size: 14px;
+	}
+	.nav li a {
+		font-size: 14px;
+	}
+	.login-board {
+		width: 100%;
+	}
+	.btn-lg, .btn-group-lg > .btn {
+		padding: 6px 12px;
+		font-size: 14px;
+		border-radius: 4px;
+	}
+}
