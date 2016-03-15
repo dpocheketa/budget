@@ -10,27 +10,30 @@ module.exports = {
    		app: ['webpack/hot/dev-server', './src/app.js']
     },
     module: {
-		loaders: [
-			{
-			    test: /\.html$/,
-			    // loader: "raw",
-			    loader: "angular-templatecache-loader",
-			    exclude: /node_modules|bower_components/
-			},
-			{
-				test: /\.js$/,
-			    loader: 'ng-annotate!babel?cacheDirectory!jshint',
-			    // loader: 'babel!jshint',
-			    query: "",
-			    exclude: /node_modules|bower_components/
-			}
-		]
+  		loaders: [
+  			{
+  			    test: /\.html$/,
+  			    // loader: "raw",
+  			    loader: "angular-templatecache-loader",
+  			    exclude: /node_modules|bower_components/
+  			},
+  			{
+  				test: /\.js$/,
+  			    loader: 'ng-annotate!babel?cacheDirectory!jshint',
+  			    // loader: 'babel!jshint',
+  			    query: "",
+  			    exclude: /node_modules|bower_components/
+  			}
+  		]
     },
     output: {
-        path: APP,
-        filename: 'public/bundle.js'
+        path: APP + '/public',
+        filename: 'bundle.js'
     },
-	plugins: [
-	    new webpack.HotModuleReplacementPlugin()
-	]
+    externals: {
+      _: 'lodash'
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+  	]
 };

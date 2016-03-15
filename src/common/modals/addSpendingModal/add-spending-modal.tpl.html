@@ -1,0 +1,48 @@
+<form class="panel panel-danger form-horizontal">
+  <div class="panel-heading">
+    <h2>Add/Edit spending</h2>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="plan-amount">Amount</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="number" id="plan-amount" name="plan-amount" placeholder="100">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="plan-title">Title</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" id="plan-title" name="plan-title" placeholder="Title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="plan-category">Category</label>
+      <div class="col-sm-10">
+        <select class="form-control" name="plan-category" id="plan-category">
+          <option value="cat-a">Category A</option>
+          <option value="cat-b" selected>Category B</option>
+          <option value="cat-c">Category C</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="plan-description">Description</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" id="plan-description" name="plan-description" placeholder="Description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="plan-date">Date</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" id="plan-date" name="plan-date" placeholder="Date">
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer clearfix">
+    <div class="pull-right btn-group-lg">
+      <!-- <button type="submit" class="btn">Cancel</button> -->
+      <a class="btn btn-default" href="index.html" role="button">Cancel</a>
+      <button type="submit" class="btn btn-danger">Add spending</button>
+    </div>
+  </div>
+</form>

@@ -1,5 +1,8 @@
 <div>
-	<div ng-include="'src/modules/application/content/header.tpl.html'"></div>
-	<div ui-view=""></div>
-	<div ng-include="'src/modules/application/content/footer.tpl.html'"></div>
+	<header ng-include="'src/modules/application/content/header.tpl.html'"></header>
+
+	<div ui-view="main"></div>
+
+	<footer ng-include="'src/modules/application/content/footer.tpl.html'"></footer>
 </div>
+

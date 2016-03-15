@@ -10,13 +10,20 @@ export default angular.module('app.dashboard', [])
 	.state('app.dashboard', {
 		url: '/dashboard',
 		views: {
-			'': {
+			'main': {
 				template: dashboardTemplate,
 				controller: dashboardController,
 				controllerAs: 'ctrl'
-
 			}
-		}
+		},
+    resolve: {
+      cashFlow: (moneyService) => {
+        return moneyService.getCashFlow();
+      },
+      balance: (moneyService) => {
+        return moneyService.getCurrentBallance();
+      }
+    }
 	});
 
 });

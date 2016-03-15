@@ -5,6 +5,6 @@ import footerTpl from './content/footer.tpl.html';
 
 export default class applicationController{
 	constructor(){
-		console.log('root');
+
 	}
 }

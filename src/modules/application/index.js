@@ -11,7 +11,23 @@ export default angular.module('app.application', [])
 			abstract: true,
 			template: appTemplate,
 			controller: appController,
-			controllerAs: 'ctrl'
+			controllerAs: 'ctrl',
+      resolve: {
+        user: (userService, $q, $state) => {
+          let dfd = $q.defer();
+          let currentUser = userService.getCurrentUser();
+
+          if (currentUser) {
+            dfd.resolve(currentUser);
+          } else {
+
+            dfd.reject(null);
+            $state.go('auth.signin');
+          }
+
+          return dfd.promise;
+        }
+      }
 		});
 
 });

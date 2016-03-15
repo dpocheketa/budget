@@ -1,11 +1,15 @@
 <div class="container">
 	<div class="well dashboard col-sm-6 col-sm-offset-3">
-		<h1>$1000</h1>
+		<h1>{{ctrl.balance.currency + ctrl.balance.value}}</h1>
 		<div class="plus-minus-buttons text-center">
-			<a class="btn btn-lg btn-success" href="popup-add-income.html" role="button">
-				<span class="glyphicon glyphicon-plus"></span>
-			</a>
-			<a class="btn btn-lg btn-danger" href="popup-add-spending.html" role="button">
+			<a class="btn btn-lg btn-success"
+         ng-click="ctrl.addIncome()"
+         role="button">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+      <a class="btn btn-lg btn-danger"
+         ng-click="ctrl.addSpending()"
+         role="button">
 				<span class="glyphicon glyphicon-minus"></span>
 			</a>
 		</div>
@@ -13,7 +17,7 @@
 
 	<div class="clearfix"></div>
 
-	<div class="table-responsive">
+	<div class="table-responsive" ng-if="ctrl.cashFlow.length">
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -27,83 +31,37 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="success">
-					<td class="amount">+$250</td>
-					<td>Title may be long</td>
-					<td class="hidden-xs">Category 2</td>
-					<td class="hidden-xs">Lorem ipsum dolor sit amet.</td>
-					<td class="hidden-xs">01.01.2016</td>
-					<td class="hidden-xs">Smth.</td>
+				<tr ng-repeat="transaction in ctrl.cashFlow"
+            ng-class="{'success': transaction.attributes.isIncome, 'danger': !transaction.attributes.isIncome}">
+					<td class="amount">
+            {{transaction.attributes.amount}}
+          </td>
+					<td>
+            {{transaction.attributes.title}}
+          </td>
+					<td class="hidden-xs">
+            {{transaction.attributes.category}}
+          </td>
+					<td class="hidden-xs">
+            {{transaction.attributes.description}}
+          </td>
+					<td class="hidden-xs">
+            {{transaction.attributes.date}}
+          </td>
+					<td class="hidden-xs">
+            {{transaction.attributes.note}}
+          </td>
 					<td class="visible-xs-block">
 						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<button class="btn btn-default dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true">
 								<span class="caret"></span>
 							</button>
 							<ul class="accordion dropdown-menu">
 								<li>Category 3</li>
-								<li>Lorem ipsum dolor sit amet.</li>
-								<li>01.01.2016</li>
-								<li>Smth.</li>
-							</ul>
-						</div>
-					</td>
-				</tr>
-				<tr class="danger">
-					<td class="amount">-$1500</td>
-					<td>Title may be long</td>
-					<td class="hidden-xs">Category 3</td>
-					<td class="hidden-xs">Lorem ipsum dolor sit amet.</td>
-					<td class="hidden-xs">01.01.2016</td>
-					<td class="hidden-xs">Smth.</td>
-					<td class="visible-xs-block">
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								<span class="caret"></span>
-							</button>
-							<ul class="accordion dropdown-menu">
-								<li>Category 3</li>
-								<li>Lorem ipsum dolor sit amet.</li>
-								<li>01.01.2016</li>
-								<li>Smth.</li>
-							</ul>
-						</div>
-					</td>
-				</tr>
-				<tr class="success">
-					<td class="amount">+$2000</td>
-					<td>Title may be long</td>
-					<td class="hidden-xs">Category 1</td>
-					<td class="hidden-xs">Lorem ipsum dolor sit amet.</td>
-					<td class="hidden-xs">01.01.2016</td>
-					<td class="hidden-xs">Smth.</td>
-					<td class="visible-xs-block">
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								<span class="caret"></span>
-							</button>
-							<ul class="accordion dropdown-menu">
-								<li>Category 1</li>
-								<li>Lorem ipsum dolor sit amet.</li>
-								<li>01.01.2016</li>
-								<li>Smth.</li>
-							</ul>
-						</div>
-					</td>
-				</tr>
-				<tr class="success">
-					<td class="amount">+$2000</td>
-					<td>Title may be long</td>
-					<td class="hidden-xs">Category 1</td>
-					<td class="hidden-xs">Lorem ipsum dolor sit amet.</td>
-					<td class="hidden-xs">01.01.2016</td>
-					<td class="hidden-xs">Smth.</td>
-					<td class="visible-xs-block">
-						<div class="dropdown">
-							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								<span class="caret"></span>
-							</button>
-							<ul class="accordion dropdown-menu">
-								<li>Category 1</li>
 								<li>Lorem ipsum dolor sit amet.</li>
 								<li>01.01.2016</li>
 								<li>Smth.</li>
@@ -115,10 +73,14 @@
 		</table>
 	</div>
 
-	<div class="text-right">
+	<div class="text-right" ng-if="ctrl.cashFlow.length">
 		<p>
 			<a href="#">Manage...</a>
 		</p>
 	</div>
+
+  <div ng-if="!ctrl.cashFlow.length">
+    <p>You haven`t any activities yet</p>
+  </div>
 
 </div>

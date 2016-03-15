@@ -1,0 +1,63 @@
+<form class="panel panel-success form-horizontal"
+      name="addIncomeForm"
+      ng-submit="ctrl.save()">
+  <div class="panel-heading">
+    <h2>Add income</h2>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Amount</label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="number"
+               ng-model="ctrl.income.amount">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Title</label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.income.title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Category</label>
+      <div class="col-sm-10">
+        <select class="form-control"
+                ng-model="ctrl.income.category"
+                ng-options="category.id as category.title for category in ctrl.incomeCategories">
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.income.description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Date</label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.income.date">
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer clearfix">
+    <div class="pull-right btn-group-lg">
+      <button type="button"
+              class="btn btn-default"
+              ng-click="ctrl.close()">
+        Cancel
+      </button>
+      <button type="submit"
+              class="btn btn-success">
+        Add income
+      </button>
+    </div>
+  </div>
+</form>
