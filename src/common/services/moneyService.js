@@ -10,7 +10,7 @@ export default class MoneyService extends BasicClass{
   }
 
   getCashFlow() {
-    let incomeList = new Parse.Query('income');
+    let incomeList = new Parse.Query('transaction');
     return incomeList.find();
   }
 
@@ -24,14 +24,13 @@ export default class MoneyService extends BasicClass{
   }
 
   addIncome(income) {
-    let incomeObject = new Parse.Object('income');
+    let transaction = new Parse.Object('transaction');
     let custom_acl = new Parse.ACL();
-    // give write access to the current user
+
     custom_acl.setWriteAccess( Parse.User.current(), true);
-    // disable public read access
     custom_acl.setReadAccess(Parse.User.current(), true);
-    incomeObject.setACL(custom_acl);
-    return incomeObject.save(income);
+    transaction.setACL(custom_acl);
+    return transaction.save(income);
   }
 
 }

@@ -7,14 +7,14 @@ export default class AddIncomeModalController extends BasicClass {
     super(arguments);
 
     this.income = {
-      isIncome: false,
+      isIncome: true,
       date: new Date()
     };
   }
 
   save(){
     this.moneyService.addIncome(this.income).then(()=>{
-      this.$uibModalInstance.close();
+      this.$uibModalInstance.close(true);
     });
   }
 

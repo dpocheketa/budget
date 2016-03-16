@@ -11,15 +11,15 @@ export default class ModalService{
   }
 
   openAddSpendingModal(){
-    this.modal.open({
+    return this.modal.open({
       template: addSpendingModalTemplate,
       controller: addSpendingModalController,
       controllerAs: 'ctrl',
-    });
+    }).result;
   }
 
   openAddIncomeModal(){
-    this.modal.open({
+    return this.modal.open({
       template: addIncomeModalTemplate,
       controller: addIncomeModalController,
       controllerAs: 'ctrl',
@@ -28,6 +28,6 @@ export default class ModalService{
           return categoriesService.getIncomeCategories();
         }
       }
-    });
+    }).result;
   }
 }
