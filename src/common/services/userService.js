@@ -1,7 +1,7 @@
 'use strict';
 
 import Parse from 'parse';
-import BasicClass from '../../lib/basicClass.js';
+import BasicClass from 'lib/basicClass.js';
 
 export default class UserService extends BasicClass{
   constructor(){
@@ -9,7 +9,12 @@ export default class UserService extends BasicClass{
   }
 
   signUp(user){
-    return Parse.User.signUp(user.username, user.password);
+    let attrs = {
+      balance: {
+        value: 0
+      }
+    };
+    return Parse.User.signUp(user.username, user.password, attrs);
   }
 
   signIn(user){

@@ -1,48 +1,74 @@
-<form class="panel panel-danger form-horizontal">
+<form class="panel panel-danger form-horizontal"
+      name="addSpendingForm"
+      ng-submit="ctrl.save()">
   <div class="panel-heading">
-    <h2>Add/Edit spending</h2>
+    <h2>Add spending</h2>
   </div>
   <div class="panel-body">
     <div class="form-group">
-      <label class="col-sm-2 control-label" for="plan-amount">Amount</label>
+      <label class="col-sm-2 control-label">
+        Amount
+      </label>
       <div class="col-sm-10">
-        <input class="form-control" type="number" id="plan-amount" name="plan-amount" placeholder="100">
+        <input class="form-control"
+               type="number"
+               ng-model="ctrl.spending.amount"
+               ng-required="true">
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2 control-label" for="plan-title">Title</label>
+      <label class="col-sm-2 control-label">
+        Title
+      </label>
       <div class="col-sm-10">
-        <input class="form-control" type="text" id="plan-title" name="plan-title" placeholder="Title">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.spending.title">
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2 control-label" for="plan-category">Category</label>
+      <label class="col-sm-2 control-label">
+        Category
+      </label>
       <div class="col-sm-10">
-        <select class="form-control" name="plan-category" id="plan-category">
-          <option value="cat-a">Category A</option>
-          <option value="cat-b" selected>Category B</option>
-          <option value="cat-c">Category C</option>
+        <select class="form-control"
+                ng-model="ctrl.income.category"
+                ng-options="category.id as category.title for category in ctrl.incomeCategories">
         </select>
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2 control-label" for="plan-description">Description</label>
+      <label class="col-sm-2 control-label">
+        Description
+      </label>
       <div class="col-sm-10">
-        <input class="form-control" type="text" id="plan-description" name="plan-description" placeholder="Description">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.spending.description">
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2 control-label" for="plan-date">Date</label>
+      <label class="col-sm-2 control-label">
+        Date
+      </label>
       <div class="col-sm-10">
-        <input class="form-control" type="text" id="plan-date" name="plan-date" placeholder="Date">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.spending.date">
       </div>
     </div>
   </div>
   <div class="panel-footer clearfix">
     <div class="pull-right btn-group-lg">
-      <!-- <button type="submit" class="btn">Cancel</button> -->
-      <a class="btn btn-default" href="index.html" role="button">Cancel</a>
-      <button type="submit" class="btn btn-danger">Add spending</button>
+      <button type="button"
+              class="btn"
+              ng-click="ctrl.close()">
+        Cancel
+      </button>
+      <button type="submit"
+              class="btn btn-danger">
+        Add spending
+      </button>
     </div>
   </div>
 </form>

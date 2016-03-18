@@ -1,6 +1,6 @@
 'use strict';
 
-import BasicClass from '../../../lib/basicClass.js';
+import BasicClass from 'lib/basicClass.js';
 
 export default class AddIncomeModalController extends BasicClass {
   constructor(incomeCategories, $uibModalInstance, moneyService){
@@ -14,7 +14,9 @@ export default class AddIncomeModalController extends BasicClass {
 
   save(){
     this.moneyService.addIncome(this.income).then(()=>{
-      this.$uibModalInstance.close(true);
+      this.moneyService.updateCurrentBalance(this.income).then((args)=>{
+        this.$uibModalInstance.close(true);
+      });
     });
   }
 

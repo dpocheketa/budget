@@ -1,6 +1,6 @@
 'use strict';
 
-import BasicClass from '../../lib/basicClass.js';
+import BasicClass from 'lib/basicClass.js';
 
 export default class DashboardController extends BasicClass{
 	constructor(moneyService, modalService, cashFlow, balance, user, $scope){
@@ -16,7 +16,11 @@ export default class DashboardController extends BasicClass{
   }
 
   addSpending(){
-    this.modalService.openAddSpendingModal();
+    this.modalService.openAddSpendingModal().then((result)=>{
+      if (result) {
+        this.updateCashFlow();
+      }
+    });
   }
 
   updateCashFlow(){

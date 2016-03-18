@@ -1,6 +1,6 @@
 'use strict';
 
-import BasicClass from '../../../lib/basicClass.js';
+import BasicClass from 'lib/basicClass.js';
 
 export default class SignInController extends BasicClass{
 	constructor(userService, $state){

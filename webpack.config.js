@@ -26,6 +26,9 @@ module.exports = {
   			}
   		]
     },
+    resolve: {
+      modulesDirectories: ['node_modules', 'src']
+    },
     output: {
         path: APP + '/public',
         filename: 'bundle.js'
