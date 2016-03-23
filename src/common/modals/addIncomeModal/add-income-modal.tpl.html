@@ -28,7 +28,7 @@
       <div class="col-sm-10">
         <select class="form-control"
                 ng-model="ctrl.income.category"
-                ng-options="category.id as category.title for category in ctrl.incomeCategories">
+                ng-options="category.id as category.attributes.name for category in ctrl.incomeCategories">
         </select>
       </div>
     </div>
@@ -43,11 +43,27 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">Date</label>
       <div class="col-sm-10">
-        <input class="form-control"
-               type="text"
-               ng-model="ctrl.income.date">
+        <p class="input-group">
+          <input type="text"
+                class="form-control"
+                uib-datepicker-popup="'dd-MMMM-yyyy'"
+                ng-model="ctrl.income.date"
+                is-open="popup1.opened"
+                datepicker-options="dateOptions"
+                ng-required="true"
+                close-text="Close"
+                alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+            <button type="button"
+                    class="btn btn-default"
+                    ng-click="open1()">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+          </span>
+        </p>
       </div>
     </div>
+
   </div>
   <div class="panel-footer clearfix">
     <div class="pull-right btn-group-lg">

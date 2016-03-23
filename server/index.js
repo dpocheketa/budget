@@ -14,7 +14,7 @@ console.log(__dirname);
 
 const app = express();
 
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, '../public'));
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 

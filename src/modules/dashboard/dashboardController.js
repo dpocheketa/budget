@@ -3,7 +3,7 @@
 import BasicClass from 'lib/basicClass.js';
 
 export default class DashboardController extends BasicClass{
-	constructor(moneyService, modalService, cashFlow, balance, user, $scope){
+	constructor(moneyService, modalService, cashFlow, balance, user, $scope, categories){
     super(arguments);
 	}
 
@@ -28,5 +28,15 @@ export default class DashboardController extends BasicClass{
       this.cashFlow = response;
       this.$scope.$apply();
     });
+  }
+
+  getCategoryName(categoryId){
+    let category = _.find(this.categories, {id: categoryId});
+
+    if (category) {
+      return category.attributes.name;
+    }
+
+    return '';
   }
 }

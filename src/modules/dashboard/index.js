@@ -22,6 +22,9 @@ export default angular.module('app.dashboard', [])
       },
       balance: (moneyService) => {
         return moneyService.getCurrentBallance();
+      },
+      categories: (categoriesService) => {
+        return categoriesService.getAllCategories();
       }
     }
 	});

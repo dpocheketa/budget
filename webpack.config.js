@@ -1,6 +1,8 @@
 'use strict';
-var webpack = require('webpack'),
-	path = require('path');
+
+var webpack = require('webpack');
+var	path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var APP = __dirname + '/';
 
@@ -23,7 +25,11 @@ module.exports = {
   			    // loader: 'babel!jshint',
   			    query: "",
   			    exclude: /node_modules|bower_components/
-  			}
+  			},
+        {
+          test: /\.css$/,
+          loader: "style-loader!css-loader"
+        }
   		]
     },
     resolve: {
@@ -37,6 +43,10 @@ module.exports = {
       _: 'lodash'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new CopyWebpackPlugin([
+          { from: 'src/assets', to: 'assets' },
+          { from: 'views'}
+        ])
   	]
 };

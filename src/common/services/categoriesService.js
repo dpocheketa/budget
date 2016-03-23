@@ -4,13 +4,23 @@ import BasicClass from 'lib/basicClass.js';
 import incomeCategories from 'mocks/incomeCategories.js';
 
 export default class CategoriesService extends BasicClass {
-  constructor($timeout){
+  constructor($timeout, dataService){
     super(arguments);
   }
 
   getIncomeCategories(){
-    return this.$timeout(()=>{
-      return incomeCategories;
-    });
+    return this.dataService.getCategories('incomeCategory');
+  }
+
+  getSpendingCategories(){
+    return this.dataService.getCategories('spendingCategory');
+  }
+
+  getAllCategories(){
+    return this.dataService.getCategories();
+  }
+
+  addCategory(category){
+    return this.dataService.addCategory(category);
   }
 }

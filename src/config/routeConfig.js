@@ -1,6 +1,6 @@
 'use strict';
 
-export default ($stateProvider, $urlRouterProvider) => {
+export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
 	$stateProvider
 		.state('other', {
 			url: '/other',
@@ -8,4 +8,6 @@ export default ($stateProvider, $urlRouterProvider) => {
 		});
 
 	$urlRouterProvider.otherwise('/dashboard');
+
+  // $locationProvider.html5Mode(true);
 };

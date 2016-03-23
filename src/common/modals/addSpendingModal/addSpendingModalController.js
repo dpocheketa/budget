@@ -3,7 +3,7 @@
 import BasicClass from 'lib/basicClass.js';
 
 export default class AddSpendingModalController extends BasicClass{
-  constructor(moneyService, $uibModalInstance){
+  constructor(moneyService, $uibModalInstance, spendingCategories){
     super(arguments);
     this.spending = {
       isIncome: false,

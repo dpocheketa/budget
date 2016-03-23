@@ -1,6 +1,10 @@
 <div class="container">
 	<div class="well dashboard col-sm-6 col-sm-offset-3">
-		<h1>{{ctrl.balance.currency + ctrl.balance.value}}</h1>
+		<h1>
+      Your current ballance:
+      <br>
+      {{ctrl.balance.currency + ctrl.balance.value}}
+    </h1>
 		<div class="plus-minus-buttons text-center">
 			<a class="btn btn-lg btn-success"
          ng-click="ctrl.addIncome()"
@@ -40,7 +44,7 @@
             {{transaction.attributes.title}}
           </td>
 					<td class="hidden-xs">
-            {{transaction.attributes.category}}
+            {{ctrl.getCategoryName(transaction.attributes.category)}}
           </td>
 					<td class="hidden-xs">
             {{transaction.attributes.description}}

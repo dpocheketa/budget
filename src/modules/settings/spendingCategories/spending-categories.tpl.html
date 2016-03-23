@@ -1,0 +1,26 @@
+<div class="container settings-container">
+
+  <h1 class="settings-title">Settings: Spending Categories</h1>
+
+    <div ng-if="ctrl.spendingCategories.length">
+      <div class="cat view-mode" ng-repeat="category in ctrl.spendingCategories">
+        <div class="pull-right">
+          <button class="btn btn-default btn-xs" type="button">Rename</button>
+          <button class="btn btn-default btn-xs" type="button">Delete</button>
+        </div>
+        {{category.attributes.name}}
+      </div>
+    </div>
+    <div ng-if="!ctrl.spendingCategories.length">
+      You haven`t any spending categories yet
+    </div>
+
+    <div class="margin-top clearfix">
+      <button class="btn btn-default"
+              ng-click="ctrl.addCategory()"
+              type="button">
+        Add Category
+      </button>
+    </div>
+
+</div>

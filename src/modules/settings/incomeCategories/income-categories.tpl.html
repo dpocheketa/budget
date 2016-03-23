@@ -1,0 +1,25 @@
+<div class="container settings-container">
+
+  <h1 class="settings-title">Settings: Income Categories</h1>
+    <div ng-if="ctrl.incomeCategories.length">
+      <div class="cat view-mode" ng-repeat="category in ctrl.incomeCategories">
+        <div class="pull-right">
+          <button class="btn btn-default btn-xs" type="button">Rename</button>
+          <button class="btn btn-default btn-xs" type="button">Delete</button>
+        </div>
+        {{category.attributes.name}}
+      </div>
+    </div>
+    <div ng-if="!ctrl.incomeCategories.length">
+      You haven`t any income categories yet
+    </div>
+
+    <div class="margin-top clearfix">
+      <button class="btn btn-default"
+              ng-click="ctrl.addCategory()"
+              type="button">
+        Add Category
+      </button>
+    </div>
+
+</div>
