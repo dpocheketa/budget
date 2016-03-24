@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', routes);
 
-const server = app.listen(3000, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
 
   const {address, port} = server.address();
 
