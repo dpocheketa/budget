@@ -41,5 +41,8 @@
     "babel-register": "^6.3.13",
     "lodash": "^4.5.3",
     "ui-router": "^1.0.0-alpha0"
+  },
+  "engines": {
+    "node": "0.12.6"
   }
 }
