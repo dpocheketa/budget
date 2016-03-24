@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "test",
+    "postinstall": "webpack",
     "start": "babel-node server.js"
   },
   "author": "dpocheketa",
