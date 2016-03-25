@@ -7,9 +7,14 @@ export default class AddIncomeModalController extends BasicClass {
     super(arguments);
 
     this.income = {
-      isIncome: true,
-      date: new Date()
+      date: new Date(),
+      isIncome: true
     };
+
+    this.popup = {
+      opened: false
+    };
+
   }
 
   save(){
@@ -22,5 +27,9 @@ export default class AddIncomeModalController extends BasicClass {
 
   close(){
     this.$uibModalInstance.dismiss('cancel');
+  }
+
+  openDatePicker(){
+    this.popup.opened = true;
   }
 }

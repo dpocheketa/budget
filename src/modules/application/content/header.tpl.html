@@ -4,28 +4,31 @@
 				<li class="active">
 					<a ui-sref="app.dashboard">Home</a>
 				</li>
-				<li>
+				<!-- <li>
           <a ui-sref="app.accounts">Manage accounts</a>
-        </li>
+        </li> -->
         <li>
-					<a ui-sref="app.settings.accounts">Settings</a>
+					<a ui-sref="app.settings.incomeCategories">Settings</a>
 					<!-- <a href="review.html">Review</a> -->
 				</li>
-				<li class="disabled">
+				<!-- <li class="disabled">
 					<a href="#">Plan</a>
-				</li>
+				</li> -->
 			</ul>
-			<div class="btn-group navbar-right">
+			<div class="btn-group navbar-right" uib-dropdown>
 				<button type="button" class="btn btn-primary">
 					<span class="glyphicon glyphicon-user">
 					</span>
-					UserName
+					{{ctrl.user}}
 				</button>
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button type="button"
+                class="btn btn-primary dropdown-toggle"
+                uib-dropdown-toggle>
 					<span class="caret"></span>
 					<span class="sr-only">Toggle Dropdown</span>
 				</button>
-				<ul class="accordion dropdown-menu">
+				<ul class="accordion dropdown-menu"
+            uib-dropdown-menu>
 					<li>
 						<a href="#">
 							<span class="glyphicon glyphicon-credit-card"></span>
@@ -33,14 +36,17 @@
 						</a>
 					</li>
 					<li>
-						<a href="settings-accounts.html">
+						<a href="#">
 							<span class="glyphicon glyphicon-cog"></span>
 							Settings
 						</a>
 					</li>
 					<li role="separator" class="divider"></li>
 					<li>
-						<a href="login.html">Exit</a>
+						<a href="#"
+               ng-click="ctrl.logout()">
+              Logout
+            </a>
 					</li>
 				</ul>
 			</div>

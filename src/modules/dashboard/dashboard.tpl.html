@@ -28,9 +28,7 @@
 					<th class="amount">Amount</th>
 					<th>Title</th>
 					<th class="hidden-xs">Category</th>
-					<th class="hidden-xs">Description</th>
 					<th class="hidden-xs">Date</th>
-					<th class="hidden-xs">Note</th>
 					<th class="visible-xs-block">Details</th>
 				</tr>
 			</thead>
@@ -47,13 +45,7 @@
             {{ctrl.getCategoryName(transaction.attributes.category)}}
           </td>
 					<td class="hidden-xs">
-            {{transaction.attributes.description}}
-          </td>
-					<td class="hidden-xs">
-            {{transaction.attributes.date}}
-          </td>
-					<td class="hidden-xs">
-            {{transaction.attributes.note}}
+            {{transaction.attributes.date | date}}
           </td>
 					<td class="visible-xs-block">
 						<div class="dropdown">

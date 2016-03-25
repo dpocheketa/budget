@@ -8,6 +8,7 @@ window._ = _; /*jslint browser: true*/
 import angular from 'angular';
 import uiRouter from 'ui-router';
 import modal from 'angular-ui-bootstrap/src/modal';
+import dropdown from 'angular-ui-bootstrap/src/dropdown';
 import datePicker from 'angular-ui-bootstrap/src/datepicker';
 // import parse from 'parse';
 
@@ -28,6 +29,7 @@ angular.module('app', [
 	'app.common',
   modal,
   datePicker,
+  dropdown,
 	application.name,
   auth.name,
 	dashboard.name,

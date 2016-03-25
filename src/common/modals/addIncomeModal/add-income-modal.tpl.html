@@ -46,17 +46,17 @@
         <p class="input-group">
           <input type="text"
                 class="form-control"
-                uib-datepicker-popup="'dd-MMMM-yyyy'"
+                uib-datepicker-popup="dd-MMMM-yyyy"
                 ng-model="ctrl.income.date"
-                is-open="popup1.opened"
-                datepicker-options="dateOptions"
+                is-open="ctrl.popup.opened"
+                datepicker-options="ctrl.datepickerOptions"
                 ng-required="true"
                 close-text="Close"
                 alt-input-formats="altInputFormats" />
           <span class="input-group-btn">
             <button type="button"
                     class="btn btn-default"
-                    ng-click="open1()">
+                    ng-click="ctrl.openDatePicker()">
               <i class="glyphicon glyphicon-calendar"></i>
             </button>
           </span>

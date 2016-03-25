@@ -4,7 +4,7 @@ import Parse from 'parse';
 import BasicClass from 'lib/basicClass.js';
 
 export default class UserService extends BasicClass{
-  constructor(){
+  constructor($window){
     super(arguments);
   }
 
@@ -23,5 +23,10 @@ export default class UserService extends BasicClass{
 
   getCurrentUser(){
     return Parse.User.current() && Parse.User.current().getUsername();
+  }
+
+  signOut(){
+    Parse.User.logOut();
+    this.$window.location.reload();
   }
 }
