@@ -6,6 +6,10 @@ export default class DashboardController extends BasicClass{
 	constructor(moneyService, modalService, cashFlow, balance, user, $scope, categories, userService){
     super(arguments);
 
+    this.initWelcomeModal();
+	}
+
+  initWelcomeModal(){
     if (!this.userService.isReadWelcomeMessage()) {
       this.modalService.openWelcomeModal().then((done)=>{
         if (done) {
@@ -13,7 +17,7 @@ export default class DashboardController extends BasicClass{
         }
       });
     }
-	}
+  }
 
   addIncome(){
     this.modalService.openAddIncomeModal().then((result)=>{

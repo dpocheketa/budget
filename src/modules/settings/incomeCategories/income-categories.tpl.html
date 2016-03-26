@@ -4,8 +4,16 @@
     <div ng-if="ctrl.incomeCategories.length">
       <div class="cat view-mode" ng-repeat="category in ctrl.incomeCategories">
         <div class="pull-right">
-          <button class="btn btn-default btn-xs" type="button">Rename</button>
-          <button class="btn btn-default btn-xs" type="button">Delete</button>
+          <button class="btn btn-warning btn-xs"
+                  ng-click="ctrl.updateCategory(category)"
+                  type="button">
+            Rename
+          </button>
+          <button class="btn btn-danger btn-xs"
+                  ng-click="ctrl.removeCategory(category)"
+                  type="button">
+            Delete
+          </button>
         </div>
         {{category.attributes.name}}
       </div>

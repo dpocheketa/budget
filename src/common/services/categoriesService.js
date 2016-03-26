@@ -23,4 +23,8 @@ export default class CategoriesService extends BasicClass {
   addCategory(category){
     return this.dataService.addCategory(category);
   }
+
+  removeCategory(category){
+    return this.dataService.removeCategory(category);
+  }
 }

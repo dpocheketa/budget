@@ -48,14 +48,6 @@ export default class DataService extends BasicClass{
     return transactionObject.save(transaction);
   }
 
-  addCategory(category){
-    let categoryObject = new Parse.Object('category');
-    let acl = privateAcl();
-
-    categoryObject.setACL(acl);
-    return categoryObject.save(category);
-  }
-
   getCategories(type){
     let categoryList = new Parse.Query('category');
 
@@ -64,5 +56,17 @@ export default class DataService extends BasicClass{
     }
 
     return categoryList.find();
+  }
+
+  addCategory(category){
+    let categoryObject = new Parse.Object('category');
+    let acl = privateAcl();
+
+    categoryObject.setACL(acl);
+    return categoryObject.save(category);
+  }
+
+  removeCategory(category){
+    return category.destroy();
   }
 }

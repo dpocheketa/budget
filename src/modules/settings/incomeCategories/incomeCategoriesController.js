@@ -10,11 +10,21 @@ export default class IncomeCategoriesController extends BasicClass{
   addCategory() {
     this.modalService.openAddCategoryModal('income').then((result)=>{
       if (result) {
-        this.categoriesService.getIncomeCategories().then((response)=>{
-          this.incomeCategories = response;
-          this.$scope.$apply();
-        });
+        this.updateCategories();
       }
+    });
+  }
+
+  removeCategory(category){
+    this.categoriesService.removeCategory(category).then(()=>{
+      this.updateCategories();
+    });
+  }
+
+  updateCategories(){
+    this.categoriesService.getIncomeCategories().then((response)=>{
+      this.incomeCategories = response;
+      this.$scope.$apply();
     });
   }
 }
