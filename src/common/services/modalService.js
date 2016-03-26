@@ -6,6 +6,8 @@ import addIncomeModalTemplate from 'common/modals/addIncomeModal/add-income-moda
 import addIncomeModalController from 'common/modals/addIncomeModal/addIncomeModalController.js';
 import addCategoryModalTemplate from 'common/modals/addCategoryModal/add-category-modal.tpl.html';
 import addCategoryModalController from 'common/modals/addCategoryModal/addCategoryModalController.js';
+import welcomModalTemplate from 'common/modals/welcomeModal/welcome-modal.tpl.html';
+import welcomeModalController from 'common/modals/welcomeModal/welcomeModalController.js';
 
 export default class ModalService{
   constructor($uibModal){
@@ -50,4 +52,13 @@ export default class ModalService{
       }
     }).result;
   }
+
+  openWelcomeModal(){
+    return this.modal.open({
+      template: welcomModalTemplate,
+      controller: welcomeModalController,
+      controllerAs: 'ctrl'
+    }).result;
+  }
+
 }

@@ -3,8 +3,16 @@
 import BasicClass from 'lib/basicClass.js';
 
 export default class DashboardController extends BasicClass{
-	constructor(moneyService, modalService, cashFlow, balance, user, $scope, categories){
+	constructor(moneyService, modalService, cashFlow, balance, user, $scope, categories, userService){
     super(arguments);
+
+    if (!this.userService.isReadWelcomeMessage()) {
+      this.modalService.openWelcomeModal().then((done)=>{
+        if (done) {
+          this.userService.welcomeMessageIsRead();
+        }
+      });
+    }
 	}
 
   addIncome(){

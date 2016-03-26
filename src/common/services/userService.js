@@ -25,6 +25,14 @@ export default class UserService extends BasicClass{
     return Parse.User.current() && Parse.User.current().getUsername();
   }
 
+  isReadWelcomeMessage(){
+    return Parse.User.current().attributes.isReadWelcomeMessage;
+  }
+
+  welcomeMessageIsRead(){
+    return Parse.User.current().set('isReadWelcomeMessage', true).save();
+  }
+
   signOut(){
     Parse.User.logOut();
     this.$window.location.reload();
