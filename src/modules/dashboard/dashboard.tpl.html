@@ -1,10 +1,10 @@
 <div class="container">
 	<div class="well dashboard col-sm-6 col-sm-offset-3">
 		<h1>
-      Your current ballance:
-      <br>
-      {{ctrl.balance.currency + ctrl.balance.value}}
-    </h1>
+			<small>Your current ballance:</small>
+			<br>
+			{{ctrl.balance.currency + ctrl.balance.value}}
+    	</h1>
 		<div class="plus-minus-buttons text-center">
 			<a class="btn btn-lg btn-success"
          ng-click="ctrl.addIncome()"
@@ -35,17 +35,17 @@
 				<tr ng-repeat="transaction in ctrl.cashFlow"
             ng-class="{'success': transaction.attributes.isIncome, 'danger': !transaction.attributes.isIncome}">
 					<td class="amount">
-            {{transaction.attributes.amount}}
-          </td>
+						{{transaction.attributes.amount}}
+					</td>
 					<td>
-            {{transaction.attributes.title}}
-          </td>
+						{{transaction.attributes.title}}
+					</td>
 					<td class="hidden-xs">
-            {{ctrl.getCategoryName(transaction.attributes.category)}}
-          </td>
+						{{ctrl.getCategoryName(transaction.attributes.category)}}
+					</td>
 					<td class="hidden-xs">
-            {{transaction.attributes.date | date}}
-          </td>
+						{{transaction.attributes.date | date}}
+					</td>
 				</tr>
 			</tbody>
 		</table>

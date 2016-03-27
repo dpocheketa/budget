@@ -3,6 +3,12 @@ form {
 		font-size: 14px;
 		font-weight: 100;
 	}
+	label {
+		display: none;
+	}
+	label.has-error {
+		display: inline-block;
+	}
 	/* input, select, textarea {
 		max-width: 100%;
 	}
