@@ -1,12 +1,19 @@
-<div class="container settings-container">
+<div class="">
 
   <h1 class="settings-title">Settings: Spending Categories</h1>
 
     <div ng-if="ctrl.spendingCategories.length">
       <div class="cat view-mode" ng-repeat="category in ctrl.spendingCategories">
         <div class="pull-right">
-          <button class="btn btn-default btn-xs" type="button">Rename</button>
-          <button class="btn btn-default btn-xs" type="button">Delete</button>
+          <button class="btn btn-warning btn-xs"
+                  type="button">
+            Rename
+          </button>
+          <button class="btn btn-danger btn-xs"
+                  ng-click="ctrl.removeCategory(category)"
+                  type="button">
+            Delete
+          </button>
         </div>
         {{category.attributes.name}}
       </div>

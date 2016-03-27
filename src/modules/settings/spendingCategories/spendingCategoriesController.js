@@ -10,11 +10,21 @@ export default class SpendingCategoriesController extends BasicClass{
   addCategory() {
      return this.modalService.openAddCategoryModal('spending').then((result)=>{
       if (result) {
-        this.categoriesService.getSpendingCategories().then((response)=>{
-          this.spendingCategories = response;
-          this.$scope.$apply();
-        });
+        this.updateCategories();
       }
+    });
+  }
+
+  removeCategory(category){
+    this.categoriesService.removeCategory(category).then(()=>{
+      this.updateCategories();
+    });
+  }
+
+  updateCategories(){
+    this.categoriesService.getSpendingCategories().then((response)=>{
+      this.spendingCategories = response;
+      this.$scope.$apply();
     });
   }
 }

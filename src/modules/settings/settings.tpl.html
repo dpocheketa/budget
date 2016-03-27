@@ -1,21 +1,29 @@
 <div class="container">
-  <div class="list-group settings-menu">
-    <!-- <a class="list-group-item"
-       ui-sref="app.settings.accounts"
-       ui-sref-active="active">
-      Accounts
-    </a> -->
-    <a class="list-group-item"
-       ui-sref="app.settings.incomeCategories"
-       ui-sref-active="active">
-      Income Categories
-    </a>
-    <a class="list-group-item"
-       ui-sref="app.settings.spendingCategories"
-       ui-sref-active="active">
-      Spending Categories
-    </a>
+  <div class="row">
+    <div class="col-sm-4 col-xs-12">
+      <div class="list-group">
+        <!-- <a class="list-group-item"
+           ui-sref="app.settings.accounts"
+           ui-sref-active="active">
+          Accounts
+        </a> -->
+        <a class="list-group-item"
+           ui-sref="app.settings.incomeCategories"
+           ui-sref-active="active">
+          Income Categories
+        </a>
+        <a class="list-group-item"
+           ui-sref="app.settings.spendingCategories"
+           ui-sref-active="active">
+          Spending Categories
+        </a>
+      </div>
+
+    </div>
+
+    <div class="col-sm-8 col-xs-12">
+      <ui-view name="content"></ui-view>
+    </div>
   </div>
 
-  <ui-view name="content"></ui-view>
 </div>
