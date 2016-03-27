@@ -11,6 +11,14 @@ form {
 	} */
 }
 
+.modal-dialog .modal-content {
+	form .well,
+	form {
+		margin-bottom: 0;
+	}
+}
+
+
 .login-board {
 	.remember-me {
 		margin-left: 16px;

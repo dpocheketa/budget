@@ -1,6 +1,9 @@
 .footer {
+	position: absolute;
+	width: 100%;
 	margin-top: $quad;
 	padding-top: $quad;
-	color: #777;
 	border-top: 1px solid #e5e5e5;
+	color: #777;
+	bottom: 0;
 }

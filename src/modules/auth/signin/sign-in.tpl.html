@@ -1,35 +1,28 @@
 <h1>Sign in:</h1>
 <div class="well">
-  <form name="ctrl.signInForm"
-        ng-submit="ctrl.signIn()"
-        ng-class="{'error': ctrl.error}">
-
-    <div ng-if="ctrl.error">
-        Error
-    </div>
-    <div class="form-group">
-      <label class="sr-only">
-        Login
+  <form name="ctrl.signInForm" ng-submit="ctrl.signIn()">
+    <div class="form-group" ng-class="{'has-error': ctrl.error}">
+      <label class="control-label" for="input-login">
+        Login (error description)
       </label>
-      <input type="text"
+      <input id="input-login"
+             type="text"
              class="form-control"
-             id="input-login"
              ng-model="ctrl.user.username"
              placeholder="Login">
     </div>
-    <div class="form-group">
-      <label class="sr-only"
-             for="input-password">
-        Password
+    <div class="form-group" ng-class="{'has-error': ctrl.error}">
+      <label class="control-label" for="input-password">
+        Password (error description)
       </label>
-      <input type="password"
+      <input id="input-password"
+             type="password"
              class="form-control"
              ng-model="ctrl.user.password"
              placeholder="Password">
     </div>
     <div class="form-group">
-      <button type="submit"
-              class="btn btn-default">
+      <button type="submit" class="btn btn-default">
         Sign in
       </button>
       <label class="remember-me">
