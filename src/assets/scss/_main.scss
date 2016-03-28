@@ -3,13 +3,9 @@ html, body {
 	height: 100%;
 	//padding-top: 20px;
 	//padding-bottom: 20px;
-	&>.ng-scope,
-	&>.ng-scope>.ng-scope {
-		min-height: 100%;
-	}
-	.main {
-		padding-bottom: $quad * 5;
-	}
+	// .main {
+	// 	padding-bottom: $quad * 5;
+	// }
 	h1 {
 		text-align: center;
 		margin-bottom: $quad * 2;
@@ -19,7 +15,13 @@ html, body {
 		margin-top: $quad;
 	}
 }
-
+.page-wrapper{
+    height: 100%;
+}
+.app-wrap{
+    min-height: 100%;
+    position: relative;
+}
 
 /*
 .accordion.dropdown-menu {

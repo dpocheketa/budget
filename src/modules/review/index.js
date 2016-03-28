@@ -1,24 +1,24 @@
 'use strict';
 
-import dashboardTemplate from './dashboard.tpl.html';
-import dashboardController from './dashboardController.js';
+import reviewTemplate from './review.tpl.html';
+import reviewController from './reviewController.js';
 
-export default angular.module('app.dashboard', [])
+export default angular.module('app.review', [])
 	.config(($stateProvider, $urlRouterProvider) => {
 
 	$stateProvider
-	.state('app.dashboard', {
-		url: '/dashboard',
+	.state('app.review', {
+		url: '/review',
 		views: {
 			'main': {
-				template: dashboardTemplate,
-				controller: dashboardController,
+				template: reviewTemplate,
+				controller: reviewController,
 				controllerAs: 'ctrl'
 			}
 		},
     resolve: {
       cashFlow: (moneyService) => {
-        return moneyService.getCashFlow(10);
+        return moneyService.getCashFlow();
       },
       balance: (moneyService) => {
         return moneyService.getCurrentBallance();

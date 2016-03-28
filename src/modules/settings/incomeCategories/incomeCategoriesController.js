@@ -21,6 +21,14 @@ export default class IncomeCategoriesController extends BasicClass{
     });
   }
 
+  renameCategory(category){
+    this.modalService.openEditCategoryModal(category).then((result)=>{
+      if (result) {
+        this.updateCategories();
+      }
+    });
+  }
+
   updateCategories(){
     this.categoriesService.getIncomeCategories().then((response)=>{
       this.incomeCategories = response;

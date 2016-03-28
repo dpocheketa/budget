@@ -23,8 +23,10 @@ export default class DataService extends BasicClass{
 
   getCashFlow(limit) {
     let incomeList = new Parse.Query('transaction');
-    limit = limit || 10;
-    return incomeList.descending("date").limit(limit).find();
+    if (limit){
+      return incomeList.descending("date").limit(limit).find();
+    }
+    return incomeList.descending("date").find();
   }
 
   saveCurrentBalance(transaction){
@@ -64,6 +66,10 @@ export default class DataService extends BasicClass{
 
     categoryObject.setACL(acl);
     return categoryObject.save(category);
+  }
+
+  updateCategory(category){
+    return category.save();
   }
 
   removeCategory(category){

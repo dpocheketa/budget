@@ -1,16 +1,15 @@
 <nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<ul class="nav nav-pills">
-				<li class="active">
-					<a ui-sref="app.dashboard">Home</a>
+				<li ui-sref-active="active">
+					<a ui-sref="app.dashboard">
+            <span class="glyphicon glyphicon-home"></span>
+            Home
+          </a>
 				</li>
-				<li>
-					<a ui-sref="app.settings.incomeCategories">Settings</a>
-					<!-- <a href="review.html">Review</a> -->
+				<li ui-sref-active="active">
+					<a ui-sref="app.review">Review</a>
 				</li>
-				<!-- <li class="disabled">
-					<a href="#">Plan</a>
-				</li> -->
 				<li class="btn-group navbar-right" uib-dropdown>
 					<button type="button" class="btn btn-primary">
 						<span class="glyphicon glyphicon-user">
@@ -26,13 +25,7 @@
 					<ul class="dropdown-menu"
 	            uib-dropdown-menu>
 						<li>
-							<a href="#">
-								<span class="glyphicon glyphicon-credit-card"></span>
-								Change account
-							</a>
-						</li>
-						<li>
-							<a href="#">
+							<a href="#" ui-sref="app.settings.incomeCategories">
 								<span class="glyphicon glyphicon-cog"></span>
 								Settings
 							</a>
@@ -40,8 +33,8 @@
 						<li role="separator" class="divider"></li>
 						<li>
 							<a href="#" ng-click="ctrl.logout()">
-				              Logout
-				            </a>
+	              Logout
+	            </a>
 						</li>
 					</ul>
 				</li>

@@ -1,0 +1,125 @@
+  <div class="container">
+
+    <h1>Review finances</h1>
+
+    <div class="container-fluid">
+      <p>Filters:</p>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="btn-toolbar">
+            <div class="btn-group">
+              <button class="btn btn-default active">
+                All
+              </button>
+              <button class="btn btn-default" disabled="true">
+                Income
+              </button>
+              <button class="btn btn-default" disabled="true">
+                Spendings
+              </button>
+            </div>
+          </div>
+        </div><!-- /.col-sm-5 -->
+        <div class="col-sm-4 sm-margin-top">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button"
+                      class="btn btn-default dropdown-toggle"
+                      disabled="true">
+                Period:
+                <span class="caret"></span>
+              </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Today</a></li>
+                  <li><a href="#">Current week</a></li>
+                  <li><a href="#">Last week</a></li>
+                  <li><a href="#" class="active">Current month</a></li>
+                  <li><a href="#">Last month</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Custom</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+            <input type="text"
+                   class="form-control"
+                   value="All time"
+                   disabled="true">
+          </div><!-- /input-group -->
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-3 sm-margin-top">
+          <div class="btn-group">
+            <button class="btn btn-default" disabled="true">
+              <span class="glyphicon glyphicon-time"></span>
+              from
+            </button>
+            <button class="btn btn-default" disabled="true">
+              <span class="glyphicon glyphicon-time"></span>
+              to
+            </button>
+          </div>
+        </div><!-- /.col-sm-3 -->
+      </div><!-- /.row -->
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="amount">
+              Amount
+              <span class="caret"></span>
+            </th>
+            <th>
+              Title
+              <span class="caret"></span>
+            </th>
+            <th class="hidden-xs">
+              Category
+              <span class="caret"></span>
+            </th>
+            <th class="hidden-xs">
+              Description
+              <span class="caret"></span>
+            </th>
+            <th class="hidden-xs">
+              Date
+              <span class="caret"></span>
+            </th>
+            <th class="hidden-xs">
+              Note
+              <span class="caret"></span>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="transaction in ctrl.cashFlow"
+            ng-class="{'success': transaction.attributes.isIncome, 'danger': !transaction.attributes.isIncome}">
+          <td class="amount">
+            {{transaction.attributes.amount}}
+          </td>
+          <td>
+            {{transaction.attributes.title}}
+          </td>
+          <td class="hidden-xs">
+            {{ctrl.getCategoryName(transaction.attributes.category)}}
+          </td>
+          <td class="hidden-xs">
+            {{transaction.attributes.description}}
+          </td>
+          <td class="hidden-xs">
+            {{transaction.attributes.date | date}}
+          </td>
+          <td class="hidden-xs">
+            {{transaction.attributes.note}}
+          </td>
+          <td>
+            <a href ng-click="ctrl.editTransaction(transaction)">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /container -->

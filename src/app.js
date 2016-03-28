@@ -23,6 +23,7 @@ import auth from './modules/auth';
 import dashboard from './modules/dashboard';
 import accounts from './modules/accounts';
 import settings from './modules/settings';
+import review from './modules/review';
 
 angular.module('app', [
 	'ui.router',
@@ -35,6 +36,7 @@ angular.module('app', [
 	dashboard.name,
   accounts.name,
   settings.name,
+  review.name,
 ])
 .config(routeConfig)
 .run(runConfig);

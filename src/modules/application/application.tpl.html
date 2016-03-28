@@ -1,8 +1,10 @@
-<div>
+<div class="app-wrap">
 	<header ng-include="'src/modules/application/content/header.tpl.html'"></header>
 
 	<div class="main" ui-view="main"></div>
 
-	<footer class="navbar-default footer" ng-include="'src/modules/application/content/footer.tpl.html'"></footer>
+	<footer class="navbar-default footer"
+          ng-include="'src/modules/application/content/footer.tpl.html'">
+  </footer>
 </div>
 
