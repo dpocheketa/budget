@@ -14,6 +14,10 @@ export default class SignUpController extends BasicClass{
         password: this.user.password
       }).then((response)=>{
         this.$state.go('app.dashboard');
+      }).catch((error)=>{
+        this.errorMessage = error.message;
+        this.error = true;
+        this.$scope.$apply();
       });
     }
   }

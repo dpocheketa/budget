@@ -3,7 +3,8 @@
   <form name="ctrl.signUpForm" ng-submit="ctrl.signUp()">
     <div class="form-group" ng-class="{'has-error': ctrl.error}">
       <label class="control-label">
-        Login
+        {{ctrl.errorMessage}}
+        {{ctrl.error}}
       </label>
       <input type="text"
              class="form-control"
