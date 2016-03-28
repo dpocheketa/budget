@@ -5,7 +5,6 @@ import BasicClass from 'lib/basicClass.js';
 export default class DashboardController extends BasicClass{
 	constructor(moneyService, modalService, cashFlow, balance, user, $scope, categories, userService){
     super(arguments);
-
     this.initWelcomeModal();
 	}
 

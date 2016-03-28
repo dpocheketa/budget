@@ -10,7 +10,9 @@ export default class SignInController extends BasicClass{
   signIn(){
     this.userService.signIn(this.user).then((user)=>{
       this.$state.go('app.dashboard');
-    }).catch(()=>{
+    }).catch((error)=>{
+      console.log(error.message);
+      this.errorMessage = error.message;
       this.error = true;
       this.$scope.$apply();
     });
