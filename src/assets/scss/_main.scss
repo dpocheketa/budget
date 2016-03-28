@@ -1,6 +1,6 @@
 html, body {
 	font-size: 18px;
-	height: 100%;
+	min-height: 100%;
 	//padding-top: 20px;
 	//padding-bottom: 20px;
 }
@@ -14,7 +14,7 @@ p + h4,
 	margin-top: $quad;
 }
 
-
+/*
 .accordion.dropdown-menu {
 	position: relative;
 	top: 0;
@@ -25,6 +25,7 @@ p + h4,
 	border-radius: 0;
 	box-shadow: none;
 }
+*/
 
 // Login page
 .login-board {

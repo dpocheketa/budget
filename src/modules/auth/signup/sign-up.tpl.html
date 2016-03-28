@@ -1,9 +1,8 @@
 <h1>Sign up:</h1>
 <div class="well">
-  <form name="ctrl.signUpForm"
-        ng-submit="ctrl.signUp()">
-    <div class="form-group">
-      <label class="sr-only">
+  <form name="ctrl.signUpForm" ng-submit="ctrl.signUp()">
+    <div class="form-group" ng-class="{'has-error': ctrl.error}">
+      <label class="control-label">
         Login
       </label>
       <input type="text"
@@ -12,8 +11,8 @@
              ng-required="true"
              placeholder="Login">
     </div>
-    <div class="form-group">
-      <label class="sr-only">
+    <div class="form-group" ng-class="{'has-error': ctrl.error}">
+      <label class="control-label">
         Password
       </label>
       <input type="password"
@@ -22,8 +21,8 @@
              ng-required="true"
              placeholder="Password">
     </div>
-    <div class="form-group">
-      <label class="sr-only">
+    <div class="form-group" ng-class="{'has-error': ctrl.error}">
+      <label class="control-label">
         Repeat password
       </label>
       <input type="password"

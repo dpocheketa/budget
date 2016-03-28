@@ -12,7 +12,7 @@
 
 // settings - Categories
 .cat {
-	padding: $quad * 0.5 0 $quad * 0.5 + 2px;
+	padding: $quad * 0.5  5px  $quad * 0.5 + 2px;
 }
 .cat:nth-child(2n) {
 	background-color: $lightBg;

@@ -9,6 +9,12 @@ form {
 	select {
 		max-width: 100%;
 	} */
+	label.control-label {
+		display: none;
+	}
+	.has-error label.control-label {
+		display: inline-block;
+	}
 }
 
 .modal-dialog .modal-content {
@@ -17,7 +23,6 @@ form {
 		margin-bottom: 0;
 	}
 }
-
 
 .login-board {
 	.remember-me {

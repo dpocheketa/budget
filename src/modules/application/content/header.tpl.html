@@ -1,54 +1,50 @@
 <nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			<ul class="nav nav-pills navbar-left">
+			<ul class="nav nav-pills">
 				<li class="active">
 					<a ui-sref="app.dashboard">Home</a>
 				</li>
-				<!-- <li>
-          <a ui-sref="app.accounts">Manage accounts</a>
-        </li> -->
-        <li>
+				<li>
 					<a ui-sref="app.settings.incomeCategories">Settings</a>
 					<!-- <a href="review.html">Review</a> -->
 				</li>
 				<!-- <li class="disabled">
 					<a href="#">Plan</a>
 				</li> -->
+				<li class="btn-group navbar-right" uib-dropdown>
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-user">
+						</span>
+						{{ctrl.user}}
+					</button>
+					<button type="button"
+	                class="btn btn-primary dropdown-toggle"
+	                uib-dropdown-toggle>
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu"
+	            uib-dropdown-menu>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-credit-card"></span>
+								Change account
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-cog"></span>
+								Settings
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<li>
+							<a href="#" ng-click="ctrl.logout()">
+				              Logout
+				            </a>
+						</li>
+					</ul>
+				</li>
 			</ul>
-			<div class="btn-group navbar-right" uib-dropdown>
-				<button type="button" class="btn btn-primary">
-					<span class="glyphicon glyphicon-user">
-					</span>
-					{{ctrl.user}}
-				</button>
-				<button type="button"
-                class="btn btn-primary dropdown-toggle"
-                uib-dropdown-toggle>
-					<span class="caret"></span>
-					<span class="sr-only">Toggle Dropdown</span>
-				</button>
-				<ul class="accordion dropdown-menu"
-            uib-dropdown-menu>
-					<li>
-						<a href="#">
-							<span class="glyphicon glyphicon-credit-card"></span>
-							Change account
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="glyphicon glyphicon-cog"></span>
-							Settings
-						</a>
-					</li>
-					<li role="separator" class="divider"></li>
-					<li>
-						<a href="#"
-               ng-click="ctrl.logout()">
-              Logout
-            </a>
-					</li>
-				</ul>
-			</div>
 		</div>
 	</nav>
