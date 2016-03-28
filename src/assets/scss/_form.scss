@@ -24,8 +24,12 @@ form {
 	}
 }
 
+// Login page
 .login-board {
+	@extend %cam;
+	//margin-top: 150px;
+	width: 360px;
 	.remember-me {
-		margin-left: 16px;
+		margin-left: $quad;
 	}
 }
