@@ -42,12 +42,35 @@ export default class DataService extends BasicClass{
     return user.set('balance', balance).save();
   }
 
+  updateBalance(newTransaction, oldTransaction){
+    let user = Parse.User.current();
+    let balance = user.get('balance');
+
+    if (newTransaction.isIncome){
+      balance.value -= oldTransaction.amount;
+      balance.value += newTransaction.amount;
+    } else {
+      balance.value += oldTransaction.amount;
+      balance.value -= newTransaction.amount;
+    }
+
+    return user.set('balance', balance).save();
+  }
+
   saveTransaction(transaction){
     let transactionObject = new Parse.Object('transaction');
     let acl = privateAcl();
 
     transactionObject.setACL(acl);
     return transactionObject.save(transaction);
+  }
+
+  updateTransaction(transaction) {
+    return transaction.save();
+  }
+
+  removeTransaction(transaction){
+    return transaction.destroy();
   }
 
   getCategories(type){

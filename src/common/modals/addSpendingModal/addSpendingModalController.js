@@ -5,10 +5,13 @@ import BasicClass from 'lib/basicClass.js';
 export default class AddSpendingModalController extends BasicClass{
   constructor(moneyService, $uibModalInstance, spendingCategories){
     super(arguments);
+
     this.spending = {
       isIncome: false,
       date: new Date()
     };
+
+    this.popup = {};
   }
 
   save(){
@@ -21,5 +24,9 @@ export default class AddSpendingModalController extends BasicClass{
 
   close(){
     this.$uibModalInstance.dismiss('cancel');
+  }
+
+  openDatePicker(){
+    this.popup.opened = true;
   }
 }

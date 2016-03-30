@@ -11,8 +11,12 @@ export default class MoneyService extends BasicClass{
     return this.dataService.getCashFlow(limit);
   }
 
-  getCurrentBallance() {
+  getCurrentBalance() {
     return this.dataService.getCurrentBalance();
+  }
+
+  updateBalance(newTransaction, oldTransaction){
+    return this.dataService.updateBalance(newTransaction, oldTransaction);
   }
 
   updateCurrentBalance(latestTransaction) {
@@ -27,4 +31,21 @@ export default class MoneyService extends BasicClass{
     return this.dataService.saveTransaction(spending);
   }
 
+  updateTransaction(transaction){
+    return this.dataService.updateTransaction(transaction);
+  }
+
+  removeTransaction(transaction){
+    let newTransactionObject = {
+      isIncome: transaction.get('isIncome'),
+      amount: 0
+    };
+    let oldTransactionObject = {
+      isIncome: transaction.get('isIncome'),
+      amount: transaction.get('amount')
+    };
+    return this.dataService.removeTransaction(transaction).then(()=>{
+      return this.updateBalance(newTransactionObject, oldTransactionObject);
+    });
+  }
 }

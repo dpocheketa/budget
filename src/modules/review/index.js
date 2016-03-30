@@ -21,7 +21,7 @@ export default angular.module('app.review', [])
         return moneyService.getCashFlow();
       },
       balance: (moneyService) => {
-        return moneyService.getCurrentBallance();
+        return moneyService.getCurrentBalance();
       },
       categories: (categoriesService) => {
         return categoriesService.getAllCategories();

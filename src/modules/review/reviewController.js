@@ -5,18 +5,7 @@ import BasicClass from 'lib/basicClass.js';
 export default class ReviewController extends BasicClass{
 	constructor(moneyService, modalService, cashFlow, balance, user, $scope, categories, userService){
     super(arguments);
-    this.initWelcomeModal();
 	}
-
-  initWelcomeModal(){
-    if (!this.userService.isReadWelcomeMessage()) {
-      this.modalService.openWelcomeModal().then((done)=>{
-        if (done) {
-          this.userService.welcomeMessageIsRead();
-        }
-      });
-    }
-  }
 
   updateCashFlow(){
     this.moneyService.getCashFlow().then((response)=>{
@@ -33,5 +22,23 @@ export default class ReviewController extends BasicClass{
     }
 
     return '';
+  }
+
+  editTransaction(transaction){
+    if (transaction.attributes.isIncome) {
+      this.modalService.openEditIncomeModal(transaction).then((result)=>{
+        this.updateCashFlow();
+      });
+    } else {
+      this.modalService.openEditSpendingModal(transaction).then((result)=>{
+        this.updateCashFlow();
+      });
+    }
+  }
+
+  removeTransaction(transaction){
+    this.moneyService.removeTransaction(transaction).then((result)=>{
+      this.updateCashFlow();
+    });
   }
 }

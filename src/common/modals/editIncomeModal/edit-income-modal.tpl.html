@@ -1,0 +1,90 @@
+<form class="panel panel-success form-horizontal"
+      name="addIncomeForm"
+      ng-submit="ctrl.save()">
+  <div class="panel-heading">
+    <h2>Edit income</h2>
+  </div>
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-2">
+        Amount
+      </label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="number"
+               ng-required="true"
+               ng-model="ctrl.income.amount">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">
+        Title
+      </label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="text"
+               ng-required="true"
+               ng-model="ctrl.income.title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">
+        Category
+      </label>
+      <div class="col-sm-10">
+        <select class="form-control"
+                ng-model="ctrl.income.category"
+                ng-options="category.id as category.attributes.name for category in ctrl.incomeCategories">
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">
+        Description
+      </label>
+      <div class="col-sm-10">
+        <input class="form-control"
+               type="text"
+               ng-model="ctrl.income.description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">
+        Date
+      </label>
+      <div class="col-sm-10">
+        <p class="input-group">
+          <input type="text"
+                class="form-control"
+                uib-datepicker-popup="dd-MMMM-yyyy"
+                ng-model="ctrl.income.date"
+                is-open="ctrl.popup.opened"
+                datepicker-options="ctrl.datepickerOptions"
+                ng-required="true"
+                close-text="Close"
+                alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+            <button type="button"
+                    class="btn btn-default"
+                    ng-click="ctrl.openDatePicker()">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer clearfix">
+    <div class="pull-right btn-group-lg">
+      <button type="button"
+              class="btn btn-default"
+              ng-click="ctrl.close()">
+        Cancel
+      </button>
+      <button type="submit"
+              class="btn btn-success">
+        Save changes
+      </button>
+    </div>
+  </div>
+</form>

@@ -21,7 +21,7 @@ export default angular.module('app.dashboard', [])
         return moneyService.getCashFlow(10);
       },
       balance: (moneyService) => {
-        return moneyService.getCurrentBallance();
+        return moneyService.getCurrentBalance();
       },
       categories: (categoriesService) => {
         return categoriesService.getAllCategories();
