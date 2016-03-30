@@ -23,7 +23,10 @@ export default class EditIncomeModalController extends BasicClass {
   }
 
   save(){
-    let oldAmount = this.existingIncome.get('amount');
+    let oldTransaction = {
+      amount: this.existingIncome.get('amount'),
+      isIncome: this.existingIncome.get('isIncome')
+    };
 
     this.existingIncome.set('date', this.income.date);
     this.existingIncome.set('amount', this.income.amount);
@@ -32,8 +35,8 @@ export default class EditIncomeModalController extends BasicClass {
     this.existingIncome.set('note', this.income.note);
     this.existingIncome.set('category', this.income.category);
 
-    this.moneyService.updateTransaction(this.existingIncome, oldAmount).then(()=>{
-      this.moneyService.updateBalance(this.income, oldAmount).then((args)=>{
+    this.moneyService.updateTransaction(this.existingIncome).then(()=>{
+      this.moneyService.updateBalance(this.income, oldTransaction).then((args)=>{
         this.$uibModalInstance.close(true);
       });
     });
